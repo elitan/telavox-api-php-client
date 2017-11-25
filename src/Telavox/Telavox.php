@@ -26,12 +26,13 @@ class Telavox {
 		return json_decode((string)$response->getBody());
 	}
 
-	function calls($from_date= null, $to_date = null, $with_recordings = false) {
+	function calls($from_date= null, $to_date = null) {
 
 		$url = 'calls';
 
 		$query = [
 			'fromDate' => $from_date,
+			'toDate' => $to_date,
 		];
 
 		$query = array_merge($query, $this->auth_query);
